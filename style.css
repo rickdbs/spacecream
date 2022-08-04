@@ -13,12 +13,16 @@
 
     --ff-primary: 'Staatliches';
     --ff-secondary: 'Palanquin';
+    --ff-3:'Roboto', sans-serif;
+    --ff-span:'Open sans';
     --fc-primary: hsl(var(--hue), 0%, 100%);
     --fc-secondary: hsl(var(--hue), 84%, 12%);
     --fc-3: hsl(var(--hue), 17%, 35%);
     
     --fs-head: 4.0rem;
     --fs-h2: 2.0rem;
+    --fs-p:2.4rem;
+    --fs-span: 1.4rem;
 
     --fbg-clr: hsl(var(--hue), 18%, 79%);
     --h2bg-clr: hsl(312, 91%, 96%);
@@ -45,6 +49,9 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+header p{
+    display: none;
 }
 
 .txtbg{
@@ -95,7 +102,7 @@ p{
     object-fit: cover;
     border-radius: 20px;
 
-    transition: all 200ms;
+    transition: all 500ms;
     filter: brightness(0.8) saturate(1.5);
 
 }
@@ -129,6 +136,10 @@ p{
     animation: topdown 700ms;
 }
 
+span{
+    display: none;
+}
+
 @keyframes topdown{
     0% {
         opacity: 0;
@@ -153,4 +164,95 @@ p{
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+@media(min-width: 930px){
+    body{
+        display: flex;
+        background-color: var(--bg-clr);
+    }
+    header{
+        
+        padding: 0;
+        margin: 0;
+        height: 96rem;
+        width: 50rem;
+    }
+    main{
+        grid-template-areas: 
+        "A B E"
+        "D B F"
+        "D C F";
+        gap:3.2rem;
+    }
+    main div:nth-child(1){
+        grid-area: A;
+    }
+    main div:nth-child(2){
+        grid-area: B;
+    }
+    main div:nth-child(3){
+        grid-area: C;
+    }
+    main div:nth-child(4){
+        grid-area: D;
+    }
+    main div:nth-child(5){
+        grid-area: E;
+    }
+    main div:nth-child(6){
+        grid-area: F;
+    }
+    
+    
+    .page{
+    
+        width: 121.8rem;
+        height: 90rem;
+        padding: 6.4rem 9.8rem 0;
+        
+        
+    
+        
+    }
+    .card{
+        width: 32rem;
+        
+        
+        
+    }
+    .card img{
+        max-height: 45rem;
+        
+    }
+    .page p{
+        display: none;
+    }
+    header p{
+        display: block;
+        margin-top: 5.2rem;
+        font-family: var(--ff-3);
+        font-size: var(--fs-p);
+        font-weight: 400;
+        color: var(--fc-primary);
+        text-align: center;
+        width: 40rem;
+    }
+    footer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5.0rem;
+    
+    }
+    span{
+        display: inline;
+        font-size: var(--fs-span);
+        font-family: var(--ff-span);
+        font-weight: 400;
+        color: hsla(232, 17%, 35%, 1);
+
+    }
+    
+
 }
